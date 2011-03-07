@@ -14,5 +14,8 @@ To run the feed parse job, you will need to install following gems:
     $ gem install base64 json rest_client twitter nokogiri open-uri
     $ rake stdout
 
+## Deployment
+Please check out the deployment guide [here](http://blog.samsonis.me/2011/03/stdout-deployment/).
+
 Have fun!
 

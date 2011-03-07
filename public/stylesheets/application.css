@@ -4,6 +4,11 @@ body {
   /*  font: 1em "Lucida Grande",Lucida,Verdana,sans-serif;*/
 }
 
+::selection         {background: #666;}
+::-moz-selection    {background: #666;}
+img::selection      {background: transparent;}
+img::-moz-selection {background: transparent;}
+
 a, a:link, a:visited {
   color: #C8E6EA;
   text-decoration: none;

@@ -10,5 +10,9 @@ Make a copy from database.yml.example, config it according to your database conf
 Config the feed parse job, play around with the code as you need:
     $ vim lib/tasks/parse_feeds.rake
 
+To run the feed parse job, you will need to install following gems:
+    $ gem install base64 json rest_client twitter nokogiri open-uri
+    $ rake stdout
+
 Have fun!
 

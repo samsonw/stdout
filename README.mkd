@@ -1,0 +1,14 @@
+## Intro
+This is the app code behind [http://stdout.samsonw.info/](http://stdout.samsonw.info/).  My current shared host provider HostMonster only support Rails 2 app with Fastcgi..., shame on them.
+
+## Config
+Make a copy from database.yml.example, config it according to your database configurations.
+
+    $ cp config/database.yml.example config/database.yml
+    $ vim config/databae.yml
+
+Config the feed parse job, play around with the code as you need:
+    $ vim lib/tasks/parse_feeds.rake
+
+Have fun!
+

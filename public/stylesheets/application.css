@@ -1,0 +1,132 @@
+body {
+  background-image: url("/images/body.jpg");
+  color: #F4F4F4;
+  /*  font: 1em "Lucida Grande",Lucida,Verdana,sans-serif;*/
+}
+
+a, a:link, a:visited {
+  color: #C8E6EA;
+  text-decoration: none;
+  border-bottom: 1px dashed #C8E6EA;
+}
+
+a:hover {
+  color: #FCBE57;
+  text-decoration: none;
+  border-bottom: 1px dashed #FCBE57;
+}
+
+a:active {
+  color: #C8E6EA;
+  text-decoration: none;
+  border-bottom: 1px dashed #C8E6EA;
+}
+
+#header {
+  background: url("/images/header_footer.jpg") repeat scroll 0 0 #1E1E1E;
+  display: block;
+  height: 200px;
+}
+
+#title {
+  font: italic 50px Georgia,"Times New Roman",Times,serif;
+  overflow: hidden;
+  text-shadow: 0 1px 1px #333;
+  text-align: center;
+  width: 100%;
+  padding: 25px 0 20px;
+}
+
+#sub_title {
+  font: italic 20px Georgia,"Times New Roman",Times,serif;
+  overflow: hidden;
+  text-align: center;
+  text-shadow: 0 1px 1px #333;
+  width: 100%;
+}
+
+#github img {
+  border: 0 none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#content {
+  padding: 20px 0;
+}
+
+.log {
+  margin-bottom: 10px;
+}
+
+.publish_time {
+  color: #FFF7E0;
+}
+
+.creator {
+  color: #B5CD4D;
+  margin-right: 5px;
+}
+
+.pagination_links {
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #CCCCCC;
+  margin: 30px 0;
+  padding: 15px 0;
+}
+
+.pagination a, .pagination .current {
+  display: inline;
+  padding: 4px 8px;
+}
+
+.pagination a {
+  border: 1px solid #404040;
+  color: #CCCCCC;
+  text-decoration: none;
+}
+
+.pagination a:hover {
+  background-color: #E1E1E1;
+  border: 1px solid #404040;
+  color: #444;
+  text-decoration: none;
+}
+
+.pagination .current {
+  font-weight: bold;
+}
+
+.pagination .disabled {
+  color: #666666;
+}
+
+#disqus_thread a { /*, #disqus_thread a:link, #disqus_thread a:visited, #disqus_thread a:active {*/
+  border-bottom: medium none transparent;
+}
+
+#footer {
+  background: url("/images/header_footer.jpg") repeat scroll 0 0 #1E1E1E;
+  display: block;
+  min-height: 80px;
+  padding: 30px 0 0;
+}
+
+#copyright {
+  font-size: 12px;
+}
+
+#copyright .losers {
+  font-style: italic;
+}
+
+#avatar img {
+  border: 0 none;
+  width: 16px;
+  height: 16px;
+}
+
+#curation {
+  float: right;
+}

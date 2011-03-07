@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>$ cat /dev/stdin >> /dev/stdout | tee stdout.samsonw.info</title>
+  <link href="/favicon.ico" rel="icon">
+  <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/text.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/960.css" />
+  <%= stylesheet_link_tag("application") %>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3406363-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+<%= yield %>
+
+<script type="text/javascript">
+    var disqus_shortname = 'samsonw-stdout';
+    // var disqus_developer = 1;
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+    var disqus_identifier = 'samsonw-stdout-production';
+    var disqus_url = 'http://stdout.samsonw.info/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+</html>

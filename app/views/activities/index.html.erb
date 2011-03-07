@@ -1,0 +1,30 @@
+<div id="header">
+  <div class="container_24">
+    <div id="title" class="grid_24">$ cat /dev/stdin >> /dev/stdout | tee stdout.samsonw.info</div>
+    <div id="sub_title" class="grid_24">Don't Panic: fatal system error, core dump file not generated ...</div>
+    <div class="clear"></div>
+  </div>
+  <a id="github" href="http://github.com/samsonw/" target="_blank"><img src="/images/github_forkme.png" alt="Fork me on GitHub"></a>
+</div>
+
+<div id="content" class="container_24 logs">
+  <%= render :partial => @activities %>
+  <div class="grid_24 pagination_links">
+    <%= will_paginate @activities, :previous_label => '← Previous', :next_label => 'Next →', :params => { :controller => "activities", :action => 'index' } %>
+  </div>
+  <div class="clear"></div>
+  <div id="disqus_thread" class="grid_24"></div>
+  <div class="clear"></div>
+</div>
+
+<div id="footer">
+  <div class="container_24">
+    <div id="copyright" class="grid_21">
+      <p>卢瑟出品，必属废品&trade;&nbsp;&nbsp;Copyright &copy; 2010&ndash;2011 by <span class="losers">"Losers"</span> Corporation.&nbsp;&nbsp;All Rights Already <span class="losers">Lost</span>.</p>
+    </div>
+    <div class="grid_3">
+      <div id="curation">Curated by <a id="avatar" href="http://blog.samsonis.me/" target="_blank"><img src="/images/avatar.jpg" alt="Avatar" title="Samson Wu"></a></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

@@ -2,6 +2,6 @@
   <div class="grid_1"><%= activity_count(activity, @page, activity_counter) %></div>
   <div class="grid_5">[ <span class="publish_time"><%= activity.publish_at.in_time_zone('Beijing').to_s(:publish_time) %></span> ]</div>
   <div class="grid_2">[ <a href="<%= activity.source.url %>" target="_blank"><%= activity.source.display_name %></a> ]</div>
-  <div class="grid_16"><span class="creator">[ <%= activity.creator %> ]</span> <%= truncate_u(activity.content, 80, ' ...') %></div>
+  <div class="grid_16"><span class="creator">[ <%= activity.creator %> ]</span> <%= highlight_and_truncate activity %></div>
   <div class="clear"></div>
 </div>

@@ -1,13 +1,13 @@
+::selection         {background: #aaa;}
+::-moz-selection    {background: #666;}
+img::selection      {background: transparent;}
+img::-moz-selection {background: transparent;}
+
 body {
   background-image: url("/images/body.jpg");
   color: #F4F4F4;
   /*  font: 1em "Lucida Grande",Lucida,Verdana,sans-serif;*/
 }
-
-::selection         {background: #aaa;}
-::-moz-selection    {background: #666;}
-img::selection      {background: transparent;}
-img::-moz-selection {background: transparent;}
 
 a, a:link, a:visited {
   color: #C8E6EA;
@@ -72,6 +72,10 @@ a:active {
 .creator {
   color: #B5CD4D;
   margin-right: 5px;
+}
+
+.highlight {
+  color: #6F78A7;
 }
 
 .pagination_links {

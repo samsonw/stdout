@@ -15,7 +15,10 @@ To run the feed parse job, you will need to install following gems:
     $ rake stdout
 
 ## Deployment
-Please check out the deployment guide [here](http://blog.samsonis.me/2011/03/stdout-deployment/).
+Please check out the [deployment guide](http://blog.samsonis.me/2011/03/stdout-deployment/).
+
+## Customization
+Please check out the [customization guide](http://blog.samsonis.me/2011/03/stdout-customization/).
 
 Have fun!
 

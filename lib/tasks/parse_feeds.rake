@@ -79,7 +79,7 @@ namespace :github do
       content = item.xpath('./xmlns:content').first.content
       creator = item.xpath('./xmlns:author/xmlns:name').first.content
       publish_at = item.xpath('./xmlns:published').first.content
-      Activity.find_or_create_by_publish_at(:source_id => source_id, :title => title, :link => link, :content => "#{title} [ #{link} ]", :creator => creator, :publish_at => publish_at)
+      Activity.find_or_create_by_content(:source_id => source_id, :title => title, :link => link, :content => "#{title} [ #{link} ]", :creator => creator, :publish_at => publish_at)
     end
   end
 end

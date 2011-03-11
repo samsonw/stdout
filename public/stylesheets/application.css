@@ -78,6 +78,25 @@ a:active {
   color: #6F78A7;
 }
 
+.highlight_link {
+  display: inline-block;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.07);
+}
+
+.highlight_link a {
+  display: inline-block;
+  color: #CCC;
+  padding: 0 8px;
+  border-bottom: medium none;
+}
+
+.highlight_link a:hover {
+  color: #FCBE57;
+  border-bottom: medium none;
+}
+
 .pagination_links {
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #CCCCCC;

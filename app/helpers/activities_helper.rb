@@ -7,11 +7,11 @@ module ActivitiesHelper
     truncated_str = truncate_u(activity.content, 80, ' ...')
     case activity.source.name
     when 'twitter'
-      highlight_twitter(truncated_str)
+      highlight_twitter(highlight_url(truncated_str))
     when 'github'
       highlight_github(truncated_str)
     else
-      truncated_str
+      highlight_url(truncated_str)
     end
   end
   
@@ -21,5 +21,9 @@ module ActivitiesHelper
   
   def highlight_github(str)
     str.gsub(/\[ (.*) \]/, '<span class="highlight_link"><a href="\1" target="_blank" title="github link">github link</a></span>')
+  end
+  
+  def highlight_url(str)
+    str.gsub(%r{(https?://\S+[^\s`!()\[\]{};:'".,<>?«»“”‘’])}, '<a rel="nofollow" target="_blank" title="\1" href="\1">\1</a>')
   end
 end

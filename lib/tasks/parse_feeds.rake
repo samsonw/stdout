@@ -51,7 +51,7 @@ namespace :sina do
 end
 
 namespace :douban do
-  desc "Parse rss/atom feeds and store the content into database"
+  desc "Parse douban rss/atom feeds and store the content into database"
   task :parse => :environment do
     puts "Starting to fetch douban broadcasts..."
     rss = Nokogiri::XML(open('http://www.douban.com/feed/people/samsonw/miniblogs'))
@@ -67,7 +67,24 @@ namespace :douban do
   end
 end
 
+namespace :github do
+  desc "Parse github feeds and store the content into database"
+  task :parse => :environment do
+    puts "Starting to fetch github public activity..."
+    rss = Nokogiri::XML(open('https://github.com/samsonw.atom'))
+    source_id = Source.find_by_name("github").id
+    rss.xpath('/xmlns:feed/xmlns:entry').each do |item|
+      title = item.xpath('./xmlns:title').first.content
+      link = item.xpath('./xmlns:link').first[:href]
+      content = item.xpath('./xmlns:content').first.content
+      creator = item.xpath('./xmlns:author/xmlns:name').first.content
+      publish_at = item.xpath('./xmlns:published').first.content
+      Activity.find_or_create_by_publish_at(:source_id => source_id, :title => title, :link => link, :content => "#{title} [ #{link} ]", :creator => creator, :publish_at => publish_at)
+    end
+  end
+end
+
 desc "Parse all things for stdout"
-task :stdout => ['feeds:parse', 'twitter:parse', 'sina:parse', 'douban:parse'] do
+task :stdout => ['feeds:parse', 'twitter:parse', 'sina:parse', 'douban:parse', 'github:parse'] do
   puts "Done."
 end

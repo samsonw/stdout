@@ -10,3 +10,4 @@ Source.find_or_create_by_name :name=>"blog", :display_name=>"Weblog", :url=>"htt
 Source.find_or_create_by_name :name=>"twitter", :display_name=>"Twitter", :url=>"http://twitter.com/"
 Source.find_or_create_by_name :name=>"sina", :display_name=>"新浪微博", :url=>"http://t.sina.com.cn/"
 Source.find_or_create_by_name :name=>"douban", :display_name=>"豆瓣", :url=>"http://www.douban.com/"
+Source.find_or_create_by_name :name=>"github", :display_name=>"github", :url=>"https://github.com/"

@@ -1,0 +1,12 @@
+defaults: &defaults
+  ttl: 604800
+  namespace: stdout-cache-
+  sessions: false
+  debug: false
+  servers: localhost:11211
+test:
+  <<: *defaults
+development:
+  <<: *defaults
+production:
+  <<: *defaults

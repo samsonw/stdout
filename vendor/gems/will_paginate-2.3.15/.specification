@@ -60,7 +60,7 @@ required_rubygems_version: !ruby/object:Gem::Requirement
 requirements: []
 
 rubyforge_project: 
-rubygems_version: 1.6.0
+rubygems_version: 1.4.2
 signing_key: 
 specification_version: 3
 summary: Pagination for Rails

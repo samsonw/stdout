@@ -1,0 +1,86 @@
+--- !ruby/object:Gem::Specification 
+name: memcache-client
+version: !ruby/object:Gem::Version 
+  hash: 61
+  prerelease: 
+  segments: 
+  - 1
+  - 8
+  - 5
+  version: 1.8.5
+platform: ruby
+authors: 
+- Eric Hodel
+- Robert Cottrell
+- Mike Perham
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-07-05 00:00:00 +08:00
+default_executable: memcached_top
+dependencies: []
+
+description: A Ruby library for accessing memcached.
+email: mperham@gmail.com
+executables: 
+- memcached_top
+extensions: []
+
+extra_rdoc_files: 
+- LICENSE.txt
+- README.rdoc
+files: 
+- FAQ.rdoc
+- History.rdoc
+- LICENSE.txt
+- README.rdoc
+- Rakefile
+- lib/continuum_native.rb
+- lib/memcache.rb
+- lib/memcache/event_machine.rb
+- lib/memcache/version.rb
+- lib/memcache_util.rb
+- performance.txt
+- test/test_benchmark.rb
+- test/test_event_machine.rb
+- test/test_mem_cache.rb
+- bin/memcached_top
+has_rdoc: true
+homepage: http://github.com/mperham/memcache-client
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.4.2
+signing_key: 
+specification_version: 3
+summary: A Ruby library for accessing memcached.
+test_files: 
+- test/test_benchmark.rb
+- test/test_event_machine.rb
+- test/test_mem_cache.rb

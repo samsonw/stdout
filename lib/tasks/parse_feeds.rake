@@ -2,7 +2,7 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 require 'twitter'
-%w(base64 json rest_client).each { |dependency| require dependency }
+%w(base64 json rest_client oauth).each { |dependency| require dependency }
 
 namespace :feeds do
   desc "Parse rss/atom feeds and store the content into database"
@@ -39,10 +39,16 @@ namespace :sina do
   desc "Parse Sina timeline"
   task :parse => :environment do
     puts "Starting to fetch sina timeline..."
-    # TODO: Config your Sina username/password below
-    sina_username = 'YOUR_SINA_USERNAME'
-    sina_password = 'YOUR_SINA_PASSWORD'
-    timeline = JSON.parse(RestClient.get "http://#{sina_username.gsub(/@/, '%40')}:#{sina_password.gsub(/@/, '%40')}@api.t.sina.com.cn/statuses/user_timeline.json?source=974029317")
+    consumer_key = '974029317'
+    consumer_secret = '7e7e2a84a3ebb54166e88c1372dd84d5'
+    # TODO: Config your Access token key & secret
+    access_key = '[TODO: INPUT ACCESS_KEY]'
+    access_secret = '[TODO: INPUT ACCESS_SECRET]'
+
+    consumer = OAuth::Consumer.new(consumer_key, consumer_secret, :site => "http://api.t.sina.com.cn")
+    access_token = OAuth::AccessToken.new(consumer, access_key, access_secret)
+
+    timeline = JSON.parse(access_token.get('/statuses/user_timeline.json').body)
     source_id = Source.find_by_name("sina").id
     timeline.each do |t|
       Activity.find_or_create_by_content(:source_id => source_id, :content => t['text'], :creator => t['user']['screen_name'], :publish_at => t['created_at'])
@@ -71,6 +77,9 @@ namespace :github do
   desc "Parse github feeds and store the content into database"
   task :parse => :environment do
     puts "Starting to fetch github public activity..."
+    # github seems have some ssl cert issue
+    require 'openssl'
+    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     rss = Nokogiri::XML(open('https://github.com/samsonw.atom'))
     source_id = Source.find_by_name("github").id
     rss.xpath('/xmlns:feed/xmlns:entry').each do |item|
